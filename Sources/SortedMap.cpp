@@ -11,6 +11,8 @@ SortedMap::SortedMap(Relation r)
 	this->relationBetweenKeys = r;
 }
 
+// For the time complexity analysis, "n" represents the number of key-value pairs in the map.
+
 // Copy constructor.
 // Time complexity: Theta(n)
 SortedMap::SortedMap(const SortedMap& sortedMap)
