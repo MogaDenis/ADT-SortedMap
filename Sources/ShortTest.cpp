@@ -37,3 +37,37 @@ void testAll(){
     assert(sm.isEmpty());
 }
 
+void testJumpForward()
+{
+    SortedMap sm(relatie1);
+
+    sm.add(1, 1);
+    sm.add(2, 2);
+    sm.add(3, 3);
+    sm.add(4, 4);
+
+    SMIterator it = sm.iterator();
+
+    it.jumpForward(1);
+    TElem e = it.getCurrent();
+
+    assert(e.first == 2);
+    assert(e.second == 2);
+
+    it.jumpForward(2);
+    e = it.getCurrent();
+
+    assert(e.first == 4);
+    assert(e.second == 4);
+
+    try
+    {
+        it.jumpForward(-1);
+        assert(false);
+    }
+    catch(const std::exception&)
+    {
+        // Do nothing.
+    }
+    
+}

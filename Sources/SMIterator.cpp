@@ -35,4 +35,25 @@ TElem SMIterator::getCurrent() const{
 	return this->currentNode->data;
 }
 
+// Best case: There is no element in the list, k is less or equal to 0 or the iterator is invalid: Theta(1)
+// Worst case: There are at least k elements: Theta(k)
+// Average case: There are at most k elements: O(k)
+// Total time complexity: O(k)
+void SMIterator::jumpForward(int k)
+{
+	// If the iterator is invalid or k is not an appropriate value, throw an exception.
+	if (!this->valid() || k <= 0)
+		throw std::exception();
+
+	// Call next k times.
+	for (int i = 0; i < k; i++)
+	{
+		// When the iterator becomes invalid, break out of the loop.
+		if (!this->valid())
+			break;
+
+		this->next();
+	}
+}
+
 

@@ -17,5 +17,6 @@ public:
 	void next();
 	bool valid() const;
     TElem getCurrent() const;
+	void jumpForward(int k);
 };
 
