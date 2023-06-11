@@ -8,3 +8,9 @@ The container offers has the following methods:
   - Search
   - Size
   - IsEmpty
+
+The ADT also includes an iterator having the following methods:
+  - IsValid
+  - Next
+  - GetCurrent
+  - First
